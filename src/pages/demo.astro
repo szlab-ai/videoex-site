@@ -1,0 +1,55 @@
+---
+const base = import.meta.env.BASE_URL;
+const canonical = new URL(`${base}demo/`, Astro.site ?? Astro.url.origin);
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b0d17" />
+    <meta name="description" content="Try videoEx controls on a sample video in Safari." />
+    <meta name="robots" content="noindex, follow" />
+    <link rel="canonical" href={canonical.href} />
+    <link rel="icon" type="image/svg+xml" href={`${base}brand/favicon.svg`} />
+    <link rel="apple-touch-icon" href={`${base}brand/apple-touch-icon.png`} />
+    <title>Sintel — Official Trailer | videoEx demo</title>
+    <style>
+      :root { color-scheme: dark; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; }
+      * { box-sizing: border-box; }
+      body { margin: 0; min-height: 100vh; color: #f3f2ff; background: radial-gradient(ellipse 75% 35% at 50% -13%, #343273 0%, #151628 56%, #0b0d17 100%); }
+      header { height: 62px; display: flex; align-items: center; border-bottom: 1px solid #ffffff17; background: #0b0d17a8; }
+      .head-inner { width: min(1100px, calc(100% - 40px)); margin: auto; display: flex; align-items: center; gap: 11px; color: #f3f2ff; text-decoration: none; font-weight: 650; letter-spacing: -.02em; }
+      .head-inner img { width: 30px; height: 30px; border-radius: 7px; }
+      .head-inner span { color: #a8a8be; font-weight: 450; }
+      main { width: min(1100px, 100%); margin: 56px auto 0; padding-bottom: 72px; }
+      video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #050509; box-shadow: 0 20px 85px #0009; }
+      .details { padding: 30px 0 0; }
+      h1 { margin: 0; font-size: clamp(1.5rem, 3vw, 2.25rem); line-height: 1.2; letter-spacing: -.035em; }
+      .credit { margin: 14px 0 0; color: #a8a8be; font-size: .875rem; line-height: 1.6; }
+      .credit a { color: #b7b4ff; text-underline-offset: 3px; }
+      .intro { margin: 25px 0 0; max-width: 660px; color: #cacadc; line-height: 1.65; }
+      @media (max-width: 1140px) { main { padding: 0 20px 64px; } }
+      @media (max-width: 680px) { main { margin-top: 24px; padding: 0 0 48px; } .details { padding: 22px 20px 0; } video { box-shadow: none; } }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a class="head-inner" href={`${base}en/`} aria-label="videoEx home">
+        <img src={`${base}brand/videoex-icon.png`} width="30" height="30" alt="" />
+        videoEx <span>demo</span>
+      </a>
+    </header>
+    <main>
+      <video controls playsinline loop preload="auto" poster={`${base}sintel-poster.jpg`} aria-label="Sintel official trailer">
+        <source src={`${base}sintel-trailer-clip.mp4`} type="video/mp4" />
+        Your browser does not support HTML video.
+      </video>
+      <div class="details">
+        <h1>Sintel — Official Trailer</h1>
+        <p class="credit">Sintel (trailer) © copyright Blender Foundation | <a href="https://durian.blender.org" rel="noopener noreferrer">durian.blender.org</a> · <a href="https://creativecommons.org/licenses/by/3.0/" rel="noopener noreferrer">CC BY 3.0</a></p>
+        <p class="intro">Open this page in Safari with videoEx turned on to try the controls.</p>
+      </div>
+    </main>
+  </body>
+</html>

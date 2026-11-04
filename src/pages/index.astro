@@ -1,0 +1,13 @@
+---
+const target = `${import.meta.env.BASE_URL}en/`;
+const canonical = new URL(target, Astro.site ?? Astro.url.origin);
+---
+<!doctype html>
+<html lang="en"><head>
+  <meta charset="utf-8" />
+  <meta name="robots" content="noindex" />
+  <title>videoEx</title>
+  <meta http-equiv="refresh" content={`0; url=${target}`} />
+  <link rel="canonical" href={canonical.href} />
+  <script is:inline set:html={`location.replace(${JSON.stringify(target)})`}></script>
+</head><body></body></html>
