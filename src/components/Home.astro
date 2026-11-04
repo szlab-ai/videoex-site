@@ -9,8 +9,11 @@ const base = import.meta.env.BASE_URL;
 const screenshots = join(process.cwd(), 'public/screenshots');
 const files = existsSync(screenshots) ? readdirSync(screenshots) : [];
 function src(prefix: string) {
-  const exact = `${prefix}.${lang}.png`;
-  const match = files.includes(exact) ? exact : files.find((name) => name.startsWith(`${prefix}-`) && name.endsWith(`.${lang}.png`));
+  const find = (locale: Lang) => {
+    const exact = `${prefix}.${locale}.png`;
+    return files.includes(exact) ? exact : files.find((name) => name.startsWith(`${prefix}-`) && name.endsWith(`.${locale}.png`));
+  };
+  const match = find(lang) ?? (lang === 'zh' ? find('en') : undefined);
   return match ? `${base}screenshots/${match}` : null;
 }
 ---

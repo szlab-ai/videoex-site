@@ -23,7 +23,7 @@ npm run build
 
 ## Screenshots and App Store link
 
-Copy web screenshots into `public/screenshots/`, named `hero-mac.en.png`, `hero-mac.zh.png`, `hero-iphone.en.png`, `hero-iphone.zh.png`, plus one `feature-<1-4>-*.en.png` and `.zh.png` per feature. Missing images show labeled placeholders. Then rebuild and deploy.
+Web screenshots live in `public/screenshots/`, named `hero-mac.en.png`, `hero-mac.zh.png`, `hero-iphone.en.png`, `hero-iphone.zh.png`, plus one `feature-<1-4>-*.en.png` and `.zh.png` per feature. A missing Chinese image uses its English counterpart until the Chinese capture is ready. If neither exists, the page shows a labeled placeholder. Then rebuild and deploy.
 
 Set `APP_STORE_URL` in `src/lib/config.ts` only after the public App Store listing is live. The intended URL is kept there as `FUTURE_APP_STORE_URL`; until then the homepage shows a non-clickable coming-soon label.
 
