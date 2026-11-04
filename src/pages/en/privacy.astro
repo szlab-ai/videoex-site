@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Prose from '../../components/Prose.astro';
+import { SUPPORT_EMAIL } from '../../lib/config';
+---
+<BaseLayout lang="en" title="Privacy Policy — videoEx" description="videoEx does not collect or upload personal or usage data. Learn how its Safari extension handles video controls and local settings.">
+  <Prose title="Privacy Policy" lead="Your video controls and preferences stay on your device.">
+    <p class="updated">Effective date: 3 November 2026</p>
+    <h2>Data collection</h2>
+    <p>videoEx does not require registration or login and has no account system. We do not collect or upload personal data or usage data. The app has no analytics, advertising, or tracking SDKs, and the developer has no server that receives data from videoEx.</p>
+    <h2>Settings stored on your device</h2>
+    <p>Your playback speed, keyboard shortcuts, per-site rules, and other preferences are stored only on your device. The app and its Safari extension share this local storage on the same device. The developer does not receive these settings.</p>
+    <h2>Safari website access</h2>
+    <p>Safari may say the extension can “read and change web pages.” videoEx needs this permission to find video elements on a web page and control playback. The extension handles video playback; it does not read or save page content, browsing history, or form contents. You can allow or turn off access for individual websites in Safari settings.</p>
+    <h2>Website icons</h2>
+    <p>To show a website icon on the app’s Websites settings page, videoEx requests that site’s icon file directly from the website, for example <code>/favicon.ico</code>. This request does not pass through a developer server.</p>
+    <h2>Children</h2>
+    <p>videoEx does not collect information from children or anyone else.</p>
+    <h2>Changes to this policy</h2>
+    <p>If this policy changes, the updated version and effective date will be posted on this page.</p>
+    <h2>Contact</h2>
+    <p>For privacy questions, email <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.</p>
+  </Prose>
+</BaseLayout>

@@ -1,0 +1,41 @@
+---
+import '../styles/global.css';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { copy, type Lang } from '../lib/content';
+const { lang, title, description } = Astro.props as { lang: Lang; title?: string; description?: string };
+const base = import.meta.env.BASE_URL;
+const origin = Astro.site ?? Astro.url.origin;
+const canonical = new URL(Astro.url.pathname, origin);
+const enURL = new URL(Astro.url.pathname.replace(/\/(en|zh)(\/|$)/, '/en$2'), origin);
+const zhURL = new URL(Astro.url.pathname.replace(/\/(en|zh)(\/|$)/, '/zh$2'), origin);
+const metaTitle = title ?? copy[lang].title;
+const metaDescription = description ?? copy[lang].description;
+const socialImage = new URL(`${base}brand/videoex-icon.png`, origin);
+---
+<!doctype html>
+<html lang={lang === 'zh' ? 'zh-Hans' : 'en'}><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0b0d17" />
+  <meta name="description" content={metaDescription} />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href={canonical.href} />
+  <link rel="alternate" hreflang="en" href={enURL.href} />
+  <link rel="alternate" hreflang="zh-Hans" href={zhURL.href} />
+  <link rel="alternate" hreflang="x-default" href={enURL.href} />
+  <link rel="icon" type="image/svg+xml" href={`${base}brand/favicon.svg`} />
+  <link rel="apple-touch-icon" href={`${base}brand/apple-touch-icon.png`} />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="videoEx" />
+  <meta property="og:title" content={metaTitle} />
+  <meta property="og:description" content={metaDescription} />
+  <meta property="og:url" content={canonical.href} />
+  <meta property="og:locale" content={lang === 'zh' ? 'zh_CN' : 'en_US'} />
+  <meta property="og:image" content={socialImage.href} />
+  <title>{metaTitle}</title>
+</head><body>
+  <SiteHeader lang={lang} />
+  <main><slot /></main>
+  <SiteFooter lang={lang} />
+</body></html>

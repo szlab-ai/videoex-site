@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Prose from '../../components/Prose.astro';
+import { SUPPORT_EMAIL } from '../../lib/config';
+---
+<BaseLayout lang="zh" title="隐私政策 — videoEx" description="videoEx 不收集或上传个人数据和使用数据。了解 Safari 扩展如何控制视频，以及设置如何只保存在本机。">
+  <Prose title="隐私政策" lead="视频控制与偏好设置，只留在你的设备上。">
+    <p class="updated">生效日期：2026 年 11 月 3 日</p>
+    <h2>数据收集</h2>
+    <p>videoEx 无需注册或登录，也没有账号体系。我们不收集、不上传个人数据或使用数据。App 中没有统计、广告或追踪 SDK；开发者也没有接收 videoEx 数据的服务器。</p>
+    <h2>保存在设备上的设置</h2>
+    <p>播放倍速、键盘快捷键、按网站保存的规则及其他偏好设置，只保存在你的设备本地。App 和 Safari 扩展在同一设备上共享这份本机存储。开发者不会收到这些设置。</p>
+    <h2>Safari 网站访问权限</h2>
+    <p>Safari 可能提示扩展可以「读取和更改网页」。videoEx 需要这项权限，才能在网页中找到视频元素并控制播放。扩展只处理视频播放，不读取或保存网页内容、浏览记录或表单内容。你可以在 Safari 设置中按网站允许或关闭访问。</p>
+    <h2>网站图标</h2>
+    <p>为了在 App 的「网站」设置页显示网站图标，videoEx 会直接向该网站请求它自己的图标文件，例如 <code>/favicon.ico</code>。请求不会经过开发者服务器。</p>
+    <h2>儿童</h2>
+    <p>videoEx 不收集儿童或其他任何人的信息。</p>
+    <h2>政策更新</h2>
+    <p>如本政策有变更，我们会在本页公布更新后的内容和生效日期。</p>
+    <h2>联系</h2>
+    <p>如有隐私相关问题，请发邮件至 <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>。</p>
+  </Prose>
+</BaseLayout>

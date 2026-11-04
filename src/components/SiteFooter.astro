@@ -1,0 +1,13 @@
+---
+import { copy, type Lang } from '../lib/content';
+import { SUPPORT_EMAIL } from '../lib/config';
+const { lang } = Astro.props as { lang: Lang };
+const base = import.meta.env.BASE_URL;
+---
+<footer class="site-footer"><div class="container footer-inner">
+  <span>© {new Date().getFullYear()} videoEx · {copy[lang].footer}</span>
+  <a href={`${base}${lang}/privacy/`}>{copy[lang].nav.privacy}</a>
+  <a href={`${base}${lang}/support/`}>{copy[lang].nav.support}</a>
+  <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>
+  <span class="footer-lang"><a href={`${base}demo/`}>Demo</a></span>
+</div></footer>

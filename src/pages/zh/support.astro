@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Prose from '../../components/Prose.astro';
+import { SUPPORT_EMAIL } from '../../lib/config';
+---
+<BaseLayout lang="zh" title="技术支持 — videoEx" description="了解如何在 Safari 中开启 videoEx、允许网站访问、使用快捷键、管理设置及申请退款。">
+  <Prose title="技术支持" lead="在 iPhone、iPad 和 Mac 上使用 videoEx 的常见问题。">
+    <p>还需要帮助？请发邮件至 <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>。</p>
+    <h2>常见问题</h2>
+    <h3>怎么开启扩展？</h3>
+    <p>Mac：打开 Safari → 设置 → 扩展，勾选 videoEx，并允许它访问网站。iPhone 或 iPad：打开「设置 → App → Safari → 扩展」，开启 videoEx，并把「允许访问的网站」设为允许。</p>
+    <h3>为什么 Safari 说 videoEx 可以「读取和更改网页」？</h3>
+    <p>扩展需要在网页中找到视频元素才能控制播放。它只处理视频播放，不读取或保存网页内容、浏览记录或表单内容。你可以在 Safari 设置中按网站授权或关闭。</p>
+    <h3>为什么在某个网站上没有反应？</h3>
+    <p>请刷新页面，并确认已允许 videoEx 访问该网站。有些网站使用自定义播放器，可能无法控制。videoEx 适用于 Safari 中的大多数网页视频。</p>
+    <h3>为什么键盘快捷键不起作用？</h3>
+    <p>在网页输入框里打字时，快捷键不会触发。Mac 上的 Control + 方向键可能会被系统的调度中心先占用，所以默认的大步长快捷键是 Option + 方向键。你可以在 App 的「键盘快捷键」页修改或恢复默认设置。</p>
+    <h3>设置在哪里修改？</h3>
+    <p>请打开 videoEx App。Safari 扩展弹窗底部也有「在 videoEx 中管理设置」入口。</p>
+    <h3>如何申请退款？</h3>
+    <p>请通过 Apple 的 <a href="https://reportaproblem.apple.com/" rel="noopener noreferrer">reportaproblem.apple.com</a> 申请。</p>
+  </Prose>
+</BaseLayout>

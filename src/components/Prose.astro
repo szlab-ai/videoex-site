@@ -1,0 +1,8 @@
+---
+const { title, lead } = Astro.props as { title: string; lead?: string };
+---
+<article class="prose-wrap">
+  <h1>{title}</h1>
+  {lead && <p class="lead">{lead}</p>}
+  <slot />
+</article>
