@@ -2,17 +2,17 @@
 
 Official product website and Safari demo for videoEx. Astro 7 + Tailwind 4, with English and Simplified Chinese pages.
 
-The production website is published with Sites at <https://videoex.popeye-ken.chatgpt.site/>. The source repository at `szlab-ai/videoex-site` is private; GitHub Pages is not used. The Sites project ID lives in `.openai/hosting.json`.
+The production website is published with GitHub Pages at <https://szlab-ai.github.io/videoex-site/>. Pushing to `main` runs `.github/workflows/deploy.yml`, following the PageTOC site's deployment pattern.
 
 ## Pages
 
 | Purpose | English | 简体中文 |
 | --- | --- | --- |
-| Marketing | `/en/` | `/zh/` |
-| Privacy policy | `/en/privacy/` | `/zh/privacy/` |
-| Support | `/en/support/` | `/zh/support/` |
+| Marketing | `/videoex-site/en/` | `/videoex-site/zh/` |
+| Privacy policy | `/videoex-site/en/privacy/` | `/videoex-site/zh/privacy/` |
+| Support | `/videoex-site/en/support/` | `/videoex-site/zh/support/` |
 
-`/demo/` is an English test video page for Safari and App Review. The root redirects to `/en/`.
+`/videoex-site/demo/` is an English test video page for Safari and App Review. The site root redirects to `/videoex-site/en/`.
 
 ## Local build
 

@@ -3,8 +3,8 @@ import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: 'https://videoex.popeye-ken.chatgpt.site',
-  base: '/',
+  site: 'https://szlab-ai.github.io',
+  base: '/videoex-site/',
   trailingSlash: 'always',
   i18n: {
     locales: ['en', 'zh'],
@@ -13,7 +13,7 @@ export default defineConfig({
   },
   integrations: [sitemap({
     i18n: { defaultLocale: 'en', locales: { en: 'en', zh: 'zh-Hans' } },
-    filter: (page) => !/^https:\/\/videoex\.popeye-ken\.chatgpt\.site\/$/.test(page) && !/\/404\/?$/.test(page) && !/\/demo\/?$/.test(page),
+    filter: (page) => !/\/videoex-site\/$/.test(page) && !/\/404\/?$/.test(page) && !/\/demo\/?$/.test(page),
   })],
   vite: { plugins: [tailwindcss()] },
 });
