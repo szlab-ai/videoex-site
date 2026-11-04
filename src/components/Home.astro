@@ -24,7 +24,7 @@ function src(prefix: string) {
     <h1>videoEx <span>{t.hero.headline}</span></h1>
     <p class="hero-intro">{t.hero.intro}</p>
     {APP_STORE_URL ? <a class="status-pill" href={APP_STORE_URL} target="_blank" rel="noopener noreferrer">App Store ↗</a> : <span class="status-pill" role="status">{t.hero.coming}</span>}
-    <p class="purchase">{t.hero.purchase}</p>
+    <p class="assurance">{t.hero.assurance}</p>
     <p class="platforms">{t.hero.platforms}</p>
     <div class="hero-stage" aria-label={lang === 'zh' ? '产品截图' : 'Product screenshots'}>
       <div class="device device-mac">{src('hero-mac') ? <img src={src('hero-mac')!} alt={lang === 'zh' ? 'Mac 上的 videoEx' : 'videoEx on Mac'} width="1600" height="1000" /> : <div class="placeholder">{t.imagePending}</div>}</div>

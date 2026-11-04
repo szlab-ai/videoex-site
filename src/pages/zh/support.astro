@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Prose from '../../components/Prose.astro';
 import { SUPPORT_EMAIL } from '../../lib/config';
 ---
-<BaseLayout lang="zh" title="技术支持 — videoEx" description="了解如何在 Safari 中开启 videoEx、允许网站访问、使用快捷键、管理设置及申请退款。">
+<BaseLayout lang="zh" title="技术支持 — videoEx" description="了解如何在 Safari 中开启 videoEx、允许网站访问、使用快捷键及管理设置。">
   <Prose title="技术支持" lead="在 iPhone、iPad 和 Mac 上使用 videoEx 的常见问题。">
     <p>还需要帮助？请发邮件至 <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>。</p>
     <h2>常见问题</h2>
@@ -17,7 +17,5 @@ import { SUPPORT_EMAIL } from '../../lib/config';
     <p>在网页输入框里打字时，快捷键不会触发。Mac 上的 Control + 方向键可能会被系统的调度中心先占用，所以默认的大步长快捷键是 Option + 方向键。你可以在 App 的「键盘快捷键」页修改或恢复默认设置。</p>
     <h3>设置在哪里修改？</h3>
     <p>请打开 videoEx App。Safari 扩展弹窗底部也有「在 videoEx 中管理设置」入口。</p>
-    <h3>如何申请退款？</h3>
-    <p>请通过 Apple 的 <a href="https://reportaproblem.apple.com/" rel="noopener noreferrer">reportaproblem.apple.com</a> 申请。</p>
   </Prose>
 </BaseLayout>

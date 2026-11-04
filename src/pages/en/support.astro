@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Prose from '../../components/Prose.astro';
 import { SUPPORT_EMAIL } from '../../lib/config';
 ---
-<BaseLayout lang="en" title="Support — videoEx" description="Get help enabling videoEx in Safari, granting website access, using shortcuts, managing settings, and requesting a refund.">
+<BaseLayout lang="en" title="Support — videoEx" description="Get help enabling videoEx in Safari, granting website access, using shortcuts, and managing settings.">
   <Prose title="Support" lead="Help with videoEx on iPhone, iPad, and Mac.">
     <p>Need more help? Email <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.</p>
     <h2>Frequently asked questions</h2>
@@ -17,7 +17,5 @@ import { SUPPORT_EMAIL } from '../../lib/config';
     <p>Shortcuts do not trigger while you type in a web page's input field. On Mac, Control + arrow keys can be taken by the system's Mission Control, so the default long-jump shortcuts use Option + arrow keys. You can change shortcuts or restore defaults in the app's Keyboard Shortcuts page.</p>
     <h3>Where do I change settings?</h3>
     <p>Open the videoEx app. The Safari extension popup also has a “Manage Settings in videoEx” link at the bottom.</p>
-    <h3>How do I request a refund?</h3>
-    <p>Request a refund through Apple at <a href="https://reportaproblem.apple.com/" rel="noopener noreferrer">reportaproblem.apple.com</a>.</p>
   </Prose>
 </BaseLayout>
